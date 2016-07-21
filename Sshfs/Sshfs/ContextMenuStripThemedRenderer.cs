@@ -1,10 +1,11 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
 namespace Sshfs
 {
-   internal sealed class ContextMenuStripThemedRenderer : ToolStripProfessionalRenderer
+    internal sealed class ContextMenuStripThemedRenderer : ToolStripProfessionalRenderer
     {
 
         private static bool IsSupported
@@ -17,12 +18,12 @@ namespace Sshfs
 
 
 
-          private static int GetItemState(ToolStripItem item)
-          {
-           
-              return item.Enabled ? (item.Selected ? 2 : 1) : (item.Selected ? 4 : 3);
-          }
-        
+        private static int GetItemState(ToolStripItem item)
+        {
+
+            return item.Enabled ? (item.Selected ? 2 : 1) : (item.Selected ? 4 : 3);
+        }
+
 
 
         protected override void OnRenderItemText(ToolStripItemTextRenderEventArgs e)
@@ -31,7 +32,7 @@ namespace Sshfs
             {
 
                 var renderer = new VisualStyleRenderer("menu", 14, GetItemState(e.Item));
-                
+
                 e.TextColor = renderer.GetColor(ColorProperty.TextColor);
 
             }
@@ -152,17 +153,23 @@ namespace Sshfs
             {
                 var renderer = new VisualStyleRenderer("menu", 13, 0);
 
-                // GetMargins(IDeviceContext dc, MarginProperty prop); PInvoke dont match unmanaged structure...
                 Padding themeMargins = default(Padding);
                 try
                 {
                     themeMargins = renderer.GetMargins(e.Graphics, MarginProperty.CaptionMargins);
                 }
-                catch {
+                catch (StackOverflowException) { return; }
+                catch
+                {
+                    // 'PInvokeStackImbalance' has detected
+                    // GetMargins(IDeviceContext dc, MarginProperty prop); PInvoke dont match unmanaged structure...
+
+                    //Calling convention is incorrect. DllImport defaults to CallingConvention.WinApi, 
+                    //which is identical to CallingConvention.StdCall for x86 desktop code. It should be CallingConvention.Cdecl
                     return;
                 }
 
-                themeMargins.Right+=2;
+                themeMargins.Right += 2;
 
                 int num = e.ToolStrip.Width - e.ToolStrip.DisplayRectangle.Width - themeMargins.Left - themeMargins.Right - 1 - e.AffectedBounds.Width;
                 var bounds = e.AffectedBounds;

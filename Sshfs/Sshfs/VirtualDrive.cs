@@ -100,6 +100,7 @@ namespace Sshfs
                 }
 
                 Debug.WriteLine("Thread:Mount");
+                Console.WriteLine("Thread:Mount");
 
 
                 try
@@ -107,6 +108,9 @@ namespace Sshfs
                     _filesystem = new VirtualFilesystem("WinSshFS spool");
                     foreach (SftpDrive drive in _drives)
                     {
+                        Console.Write("Mount ");
+                        Console.Write(drive.Letter);
+
                         _filesystem.AddSubFS(drive);
                     }
 
@@ -114,6 +118,7 @@ namespace Sshfs
                 }
                 catch (Exception e)
                 {
+                    Console.Write(e.Message);
 
                     _lastExeption = e;
                     _exeptionThrown = true;
@@ -177,6 +182,12 @@ namespace Sshfs
             {
 
                 _exeptionThrown = false;
+
+                Debugger.Log(1, "Error", _lastExeption.Message);
+                
+                Console.WriteLine(_lastExeption.Message);
+                Console.WriteLine(_lastExeption.StackTrace);
+                Debugger.Break();
 
                 throw _lastExeption;
             }

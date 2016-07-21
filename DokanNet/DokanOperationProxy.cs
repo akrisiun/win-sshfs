@@ -10,7 +10,8 @@ using FILETIME = System.Runtime.InteropServices.ComTypes.FILETIME;
 
 namespace DokanNet
 {
-    internal sealed class DokanOperationProxy
+    //internal 
+    public sealed class DokanOperationProxy
     {
      
 

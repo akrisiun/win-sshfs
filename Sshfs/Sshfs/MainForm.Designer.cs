@@ -126,7 +126,7 @@
             this.fieldsPanel.ColumnCount = 3;
             this.fieldsPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.10063F));
             this.fieldsPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.89937F));
-            this.fieldsPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
+            this.fieldsPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 23F));
             this.fieldsPanel.Controls.Add(this.proxyHostBox, 1, 10);
             this.fieldsPanel.Controls.Add(this.label12, 0, 10);
             this.fieldsPanel.Controls.Add(this.panel3, 1, 11);
@@ -176,7 +176,7 @@
             this.proxyHostBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.proxyHostBox.Location = new System.Drawing.Point(82, 322);
             this.proxyHostBox.Name = "proxyHostBox";
-            this.proxyHostBox.Size = new System.Drawing.Size(220, 20);
+            this.proxyHostBox.Size = new System.Drawing.Size(218, 20);
             this.proxyHostBox.TabIndex = 26;
             // 
             // label12
@@ -197,13 +197,13 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(82, 351);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(220, 23);
+            this.panel3.Size = new System.Drawing.Size(218, 23);
             this.panel3.TabIndex = 24;
             // 
             // proxyPassBox
             // 
             this.proxyPassBox.Dock = System.Windows.Forms.DockStyle.Right;
-            this.proxyPassBox.Location = new System.Drawing.Point(115, 0);
+            this.proxyPassBox.Location = new System.Drawing.Point(113, 0);
             this.proxyPassBox.Name = "proxyPassBox";
             this.proxyPassBox.Size = new System.Drawing.Size(105, 20);
             this.proxyPassBox.TabIndex = 1;
@@ -232,7 +232,7 @@
             // 
             this.nameBox.Location = new System.Drawing.Point(82, 3);
             this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(220, 20);
+            this.nameBox.Size = new System.Drawing.Size(218, 20);
             this.nameBox.TabIndex = 0;
             this.nameBox.Leave += new System.EventHandler(this.box_Leave);
             // 
@@ -251,7 +251,7 @@
             // 
             this.hostBox.Location = new System.Drawing.Point(82, 32);
             this.hostBox.Name = "hostBox";
-            this.hostBox.Size = new System.Drawing.Size(220, 20);
+            this.hostBox.Size = new System.Drawing.Size(218, 20);
             this.hostBox.TabIndex = 1;
             this.hostBox.Leave += new System.EventHandler(this.box_Leave);
             // 
@@ -299,7 +299,7 @@
             // 
             this.userBox.Location = new System.Drawing.Point(82, 90);
             this.userBox.Name = "userBox";
-            this.userBox.Size = new System.Drawing.Size(220, 20);
+            this.userBox.Size = new System.Drawing.Size(218, 20);
             this.userBox.TabIndex = 3;
             this.userBox.Leave += new System.EventHandler(this.box_Leave);
             // 
@@ -313,7 +313,7 @@
             "Pageant"});
             this.authCombo.Location = new System.Drawing.Point(82, 119);
             this.authCombo.Name = "authCombo";
-            this.authCombo.Size = new System.Drawing.Size(220, 21);
+            this.authCombo.Size = new System.Drawing.Size(218, 21);
             this.authCombo.TabIndex = 4;
             this.authCombo.SelectedIndexChanged += new System.EventHandler(this.authBox_SelectedIndexChanged);
             // 
@@ -379,7 +379,7 @@
             "/"});
             this.directoryBox.Location = new System.Drawing.Point(82, 206);
             this.directoryBox.Name = "directoryBox";
-            this.directoryBox.Size = new System.Drawing.Size(220, 21);
+            this.directoryBox.Size = new System.Drawing.Size(218, 21);
             this.directoryBox.TabIndex = 8;
             // 
             // label7
@@ -401,7 +401,7 @@
             this.panel2.Controls.Add(this.passwordBox);
             this.panel2.Location = new System.Drawing.Point(82, 148);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(220, 52);
+            this.panel2.Size = new System.Drawing.Size(218, 52);
             this.panel2.TabIndex = 15;
             // 
             // passphraseBox
@@ -467,7 +467,7 @@
             this.mountPointBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mountPointBox.Location = new System.Drawing.Point(82, 264);
             this.mountPointBox.Name = "mountPointBox";
-            this.mountPointBox.Size = new System.Drawing.Size(220, 20);
+            this.mountPointBox.Size = new System.Drawing.Size(218, 20);
             this.mountPointBox.TabIndex = 18;
             // 
             // label10
@@ -492,7 +492,7 @@
             "SOCKS5"});
             this.proxyType.Location = new System.Drawing.Point(82, 293);
             this.proxyType.Name = "proxyType";
-            this.proxyType.Size = new System.Drawing.Size(220, 21);
+            this.proxyType.Size = new System.Drawing.Size(218, 21);
             this.proxyType.TabIndex = 21;
             // 
             // driveListView

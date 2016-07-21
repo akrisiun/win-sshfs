@@ -27,6 +27,7 @@ namespace Sshfs
             Debug.Listeners.Add(new DelimitedListTraceListener(Environment.CurrentDirectory+"\\last.log", "debug"));
 #endif
             app = new SftpManagerApplication();
+            //app.First
             app.UnhandledException += app_UnhandledException;
             app.Shutdown += app_Shutdown;
             app.Run(args);
@@ -39,6 +40,9 @@ namespace Sshfs
 
         static void app_UnhandledException(object sender, Microsoft.VisualBasic.ApplicationServices.UnhandledExceptionEventArgs e)
         {
+            var ex = e.Exception;
+            Debugger.Log(0, "UnhandledException", ex.Message);
+            Debugger.Log(0, "UnhandledException", ex.StackTrace);
             MessageBox.Show(e.Exception.Message);
         }
     }

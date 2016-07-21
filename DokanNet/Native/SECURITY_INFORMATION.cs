@@ -6,7 +6,8 @@ using System.Text;
 namespace DokanNet.Native
 {
     [Flags]
-    internal enum SECURITY_INFORMATION : uint
+    //internal 
+    public enum SECURITY_INFORMATION : uint
     {
         /// <summary>
         /// Structure taken from http://www.pinvoke.net/default.aspx/Enums/SECURITY_INFORMATION.html

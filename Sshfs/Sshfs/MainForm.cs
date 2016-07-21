@@ -74,6 +74,10 @@ namespace Sshfs
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
+                if (ex.InnerException != null)
+                    Console.WriteLine(ex.InnerException.Message);
+
                 if (Visible)
                 {
                     BeginInvoke(

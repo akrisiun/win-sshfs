@@ -4,7 +4,8 @@ using System.Runtime.InteropServices;
 namespace DokanNet.Native
 {
     [StructLayout(LayoutKind.Sequential, Pack = 4)]
-    internal struct DOKAN_OPERATIONS
+    //internal 
+    public struct DOKAN_OPERATIONS
     {
         public DokanOperationProxy.CreateFileDelegate CreateFile;
         public DokanOperationProxy.OpenDirectoryDelegate OpenDirectory;
