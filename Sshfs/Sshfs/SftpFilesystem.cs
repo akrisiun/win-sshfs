@@ -406,7 +406,7 @@ namespace Sshfs
                                                    ? System.IO.FileAccess.Read
                                                    : System.IO.FileAccess.ReadWrite, sftpFileAttributes);
             }
-            catch (SshException ex) // Don't have access rights or try to read broken symlink
+            catch (SshException) // Don't have access rights or try to read broken symlink
             {
                 var ownerpath = path.Substring(0, path.LastIndexOf('/'));
                 //var sftpPathAttributes = _cache.Get(ownerpath) as SftpFileAttributes;
@@ -1011,7 +1011,7 @@ namespace Sshfs
                 {
                     _sftpSession.RequestSetStat(GetUnixPath(fileName), currentattr);
                 }
-                catch(SftpPermissionDeniedException e)
+                catch(SftpPermissionDeniedException)
                 {
                     return DokanError.ErrorAccessDenied;
                 }

@@ -3,6 +3,7 @@
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Windows.Forms;
 
 #endregion
 
@@ -25,8 +26,20 @@ namespace Sshfs
             //Debug.Listeners.Add(new DelimitedListTraceListener(String.Format("{0}\\log{1:yyyy-MM-dd-HH-mm-ss}.txt",Environment.CurrentDirectory,DateTime.Now), "debug"));
             Debug.Listeners.Add(new DelimitedListTraceListener(Environment.CurrentDirectory+"\\last.log", "debug"));
 #endif
-            SftpManagerApplication app = new SftpManagerApplication();
+            app = new SftpManagerApplication();
+            app.UnhandledException += app_UnhandledException;
+            app.Shutdown += app_Shutdown;
             app.Run(args);
+        }
+
+        static void app_Shutdown(object sender, EventArgs e)
+        {
+            Debugger.Log(0, "", "Shutdown");
+        }
+
+        static void app_UnhandledException(object sender, Microsoft.VisualBasic.ApplicationServices.UnhandledExceptionEventArgs e)
+        {
+            MessageBox.Show(e.Exception.Message);
         }
     }
 }

@@ -171,6 +171,8 @@ namespace Sshfs
             base.OnLoad(e);
         }
 
+        #region Combo
+
         private void updateVirtualDriveCombo()
         {
             if (_updateLockvirtualDriveBox)
@@ -263,6 +265,8 @@ namespace Sshfs
             buttonPanel.Enabled = removeButton.Enabled = fieldsPanel.Enabled = driveListView.Items.Count != 0;
         }
 
+        #endregion
+
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
@@ -282,6 +286,8 @@ namespace Sshfs
             }
             base.OnFormClosing(e);
         }
+
+        #region UI Clicks
 
         private void addButton_Click(object sender, EventArgs e)
         {
@@ -554,6 +560,10 @@ namespace Sshfs
             }
         }
 
+        #endregion
+
+        #region Shown
+
         private void MainForm_Shown(object sender, EventArgs e)
         {
             Visible = false;
@@ -667,8 +677,8 @@ namespace Sshfs
             driveListView.Columns[0].Width = driveListView.ClientRectangle.Width - 1;
         }
 
+        #endregion
 
-       
         protected override void OnFormClosed(FormClosedEventArgs e)
         {
             SystemEvents.PowerModeChanged -= SystemEvents_PowerModeChanged;
@@ -685,6 +695,8 @@ namespace Sshfs
             virtualDrive.Unmount();
             base.OnFormClosed(e);
         }
+
+        #region Events 3
 
         private  void box_Leave(object sender, EventArgs e)
         {
@@ -804,6 +816,7 @@ namespace Sshfs
             buttonVFSupdate();
         }
 
+        #endregion
 
     }
 }

@@ -152,8 +152,15 @@ namespace Sshfs
             {
                 var renderer = new VisualStyleRenderer("menu", 13, 0);
 
-
-                var themeMargins = renderer.GetMargins(e.Graphics, MarginProperty.CaptionMargins);
+                // GetMargins(IDeviceContext dc, MarginProperty prop); PInvoke dont match unmanaged structure...
+                Padding themeMargins = default(Padding);
+                try
+                {
+                    themeMargins = renderer.GetMargins(e.Graphics, MarginProperty.CaptionMargins);
+                }
+                catch {
+                    return;
+                }
 
                 themeMargins.Right+=2;
 

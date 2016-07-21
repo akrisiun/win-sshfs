@@ -3,6 +3,7 @@
 namespace DokanNet
 {
     [Flags]
+    [CLSCompliant(false)]
     public enum FileSystemFeatures : uint
     {
         CaseSensitiveSearch = 1,

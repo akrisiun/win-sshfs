@@ -3,6 +3,7 @@
 namespace DokanNet
 {
     [Flags]
+    [CLSCompliant(true)]
     public enum DokanOptions : ulong
     {
         DebugMode = 1, // ouput debug message

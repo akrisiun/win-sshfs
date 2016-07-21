@@ -3,6 +3,7 @@
 namespace DokanNet
 {
     [Flags]
+    [CLSCompliant(false)]
     public enum FileAccess : uint
     {
         GenericRead = 2147483648,       //0x80000000
